@@ -1,0 +1,17 @@
+[package]
+name = "narrative_app"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+glow = "0.10.0"
+imgui = "0.10.0"
+imgui-glow-renderer = "0.10.0"
+imgui-winit-support = "0.10.0"
+glutin = "0.29.1"
+nalgebra-glm = "0.18.0"
+nalgebra = "0.32.2"
+itertools = "0.10.5"
+enum-map = "2.5.0"
+image = "0.24.6"
+rand = "0.8.5"
