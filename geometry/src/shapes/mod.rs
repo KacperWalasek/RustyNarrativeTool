@@ -1,19 +1,21 @@
-use std::any::Any;
+use circle::Circle;
+use line::Line2D;
+use rectangle::Rectangle;
+use segment::Segment2D;
 
-pub mod simple;
 pub mod affine;
+pub mod circle;
+pub mod line;
+pub mod rectangle;
+pub mod segment;
 
-
-pub trait Shape {
-}
-pub trait AsAny {
-    fn as_any(&self) -> &dyn Any;
-}
-impl<T: Any + Shape> AsAny for T {
-    fn as_any(&self) -> &dyn Any {
-        self
-    }
+#[derive(Debug, Clone)]
+pub enum Shape2D {
+    Rectangle { rect: Rectangle },
+    Circle { circle: Circle },
+    Line { line: Line2D },
+    Segment { segment: Segment2D },
+    Point,
 }
 
-pub trait AnyShape: Shape + AsAny {}
-impl<T: Shape + AsAny> AnyShape for T {}
+pub trait Shape2DType: Into<Shape2D> + Clone {}
